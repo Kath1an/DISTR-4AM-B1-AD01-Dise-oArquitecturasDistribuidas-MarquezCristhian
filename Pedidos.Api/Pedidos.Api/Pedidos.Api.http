@@ -1,0 +1,6 @@
+@Pedidos.Api_HostAddress = http://localhost:5300
+
+GET {{Pedidos.Api_HostAddress}}/api/clientes
+Accept: application/json
+
+###

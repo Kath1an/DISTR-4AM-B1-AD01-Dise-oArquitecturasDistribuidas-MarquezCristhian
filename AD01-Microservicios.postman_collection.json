@@ -1,0 +1,523 @@
+{
+  "info": {
+    "name": "AD01 - Microservicios Distribuidos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Catalogo.Api",
+      "item": [
+        {
+          "name": "Categorias",
+          "item": [
+            {
+              "name": "GET - Listar categorias",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/categorias"
+              }
+            },
+            {
+              "name": "GET - Obtener categoria por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/categorias/1"
+              }
+            },
+            {
+              "name": "POST - Crear categoria",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5100/api/categorias",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptops\",\n  \"descripcion\": \"Computadoras portátiles\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar categoria",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5100/api/categorias/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptops y Notebooks\",\n  \"descripcion\": \"Computadoras portátiles actualizadas\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar categoria",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5100/api/categorias/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Marcas",
+          "item": [
+            {
+              "name": "GET - Listar marcas",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/marcas"
+              }
+            },
+            {
+              "name": "GET - Obtener marca por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/marcas/1"
+              }
+            },
+            {
+              "name": "POST - Crear marca",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5100/api/marcas",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Dell\",\n  \"paisOrigen\": \"Estados Unidos\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar marca",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5100/api/marcas/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Dell Technologies\",\n  \"paisOrigen\": \"Estados Unidos\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar marca",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5100/api/marcas/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Productos",
+          "item": [
+            {
+              "name": "GET - Listar productos",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/productos"
+              }
+            },
+            {
+              "name": "GET - Obtener producto por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5100/api/productos/1"
+              }
+            },
+            {
+              "name": "POST - Crear producto",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5100/api/productos",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCategoria\": 1,\n  \"idMarca\": 1,\n  \"nombre\": \"Dell Inspiron 15\",\n  \"sku\": \"DELL-INS-15\",\n  \"precio\": 850.00,\n  \"estado\": true\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar producto",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5100/api/productos/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCategoria\": 1,\n  \"idMarca\": 1,\n  \"nombre\": \"Dell Inspiron 15 3000\",\n  \"sku\": \"DELL-INS-15-3000\",\n  \"precio\": 900.00,\n  \"estado\": true\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar producto",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5100/api/productos/1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Inventario.Api",
+      "item": [
+        {
+          "name": "Bodegas",
+          "item": [
+            {
+              "name": "GET - Listar bodegas",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/bodegas"
+              }
+            },
+            {
+              "name": "GET - Obtener bodega por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/bodegas/1"
+              }
+            },
+            {
+              "name": "POST - Crear bodega",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5200/api/bodegas",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Bodega Norte\",\n  \"ciudad\": \"Quito\",\n  \"direccion\": \"Av. 10 de Agosto N45-123\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar bodega",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5200/api/bodegas/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Bodega Norte Principal\",\n  \"ciudad\": \"Quito\",\n  \"direccion\": \"Av. 10 de Agosto N45-123\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar bodega",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5200/api/bodegas/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Existencias",
+          "item": [
+            {
+              "name": "GET - Listar existencias",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/existencias"
+              }
+            },
+            {
+              "name": "GET - Obtener existencia por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/existencias/1"
+              }
+            },
+            {
+              "name": "POST - Crear existencia",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5200/api/existencias",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"stock\": 50\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar existencia",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5200/api/existencias/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"stock\": 75\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar existencia",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5200/api/existencias/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Movimientos Inventario",
+          "item": [
+            {
+              "name": "GET - Listar movimientos",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/movimientosinventario"
+              }
+            },
+            {
+              "name": "GET - Obtener movimiento por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/movimientosinventario/1"
+              }
+            },
+            {
+              "name": "POST - Crear movimiento",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5200/api/movimientosinventario",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"tipo\": \"ENTRADA\",\n  \"cantidad\": 20\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar movimiento",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5200/api/movimientosinventario/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"tipo\": \"SALIDA\",\n  \"cantidad\": 10\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar movimiento",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5200/api/movimientosinventario/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reservas Stock",
+          "item": [
+            {
+              "name": "GET - Listar reservas",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/reservasstock"
+              }
+            },
+            {
+              "name": "GET - Obtener reserva por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5200/api/reservasstock/1"
+              }
+            },
+            {
+              "name": "POST - Crear reserva",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5200/api/reservasstock",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"cantidad\": 5,\n  \"estado\": \"PENDIENTE\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar reserva",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5200/api/reservasstock/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idProducto\": 1,\n  \"idBodega\": 1,\n  \"cantidad\": 5,\n  \"estado\": \"CONFIRMADA\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar reserva",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5200/api/reservasstock/1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pedidos.Api",
+      "item": [
+        {
+          "name": "Clientes",
+          "item": [
+            {
+              "name": "GET - Listar clientes",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/clientes"
+              }
+            },
+            {
+              "name": "GET - Obtener cliente por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/clientes/1"
+              }
+            },
+            {
+              "name": "POST - Crear cliente",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5300/api/clientes",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombres\": \"Juan Perez\",\n  \"cedula\": \"1712345678\",\n  \"correo\": \"juan.perez@email.com\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar cliente",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5300/api/clientes/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombres\": \"Juan Carlos Perez\",\n  \"cedula\": \"1712345678\",\n  \"correo\": \"jcperez@email.com\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar cliente",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5300/api/clientes/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Pedidos",
+          "item": [
+            {
+              "name": "GET - Listar pedidos",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/pedidos"
+              }
+            },
+            {
+              "name": "GET - Obtener pedido por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/pedidos/1"
+              }
+            },
+            {
+              "name": "POST - Crear pedido",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5300/api/pedidos",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCliente\": 1,\n  \"estado\": \"PENDIENTE\"\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar pedido",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5300/api/pedidos/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCliente\": 1,\n  \"estado\": \"CONFIRMADO\"\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar pedido",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5300/api/pedidos/1"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Detalles Pedido",
+          "item": [
+            {
+              "name": "GET - Listar detalles",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/detallespedido"
+              }
+            },
+            {
+              "name": "GET - Obtener detalle por ID",
+              "request": {
+                "method": "GET",
+                "url": "http://localhost:5300/api/detallespedido/1"
+              }
+            },
+            {
+              "name": "POST - Crear detalle",
+              "request": {
+                "method": "POST",
+                "url": "http://localhost:5300/api/detallespedido",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idPedido\": 1,\n  \"idProducto\": 1,\n  \"cantidad\": 2,\n  \"precioUnitario\": 850.00\n}"
+                }
+              }
+            },
+            {
+              "name": "PUT - Actualizar detalle",
+              "request": {
+                "method": "PUT",
+                "url": "http://localhost:5300/api/detallespedido/1",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idPedido\": 1,\n  \"idProducto\": 1,\n  \"cantidad\": 3,\n  \"precioUnitario\": 850.00\n}"
+                }
+              }
+            },
+            {
+              "name": "DELETE - Eliminar detalle",
+              "request": {
+                "method": "DELETE",
+                "url": "http://localhost:5300/api/detallespedido/1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
